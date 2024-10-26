@@ -6,8 +6,9 @@ import Report from './Report';  // Import the Report component
 
 function App() {
   return (
-    <Router>
+    <Router basename="/laundry">  {/* Set the basename for GitHub Pages */}
       <Routes>
+        
         <Route path="/" element={<MainComponent />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/report" element={<Report />} />  {/* Add the new route */}

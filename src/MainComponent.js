@@ -173,7 +173,7 @@ function MainComponent() {
         <h1 className="mb-0">Washing Machine</h1>
         <button 
           className="btn btn-secondary" 
-          onClick={() => window.open('/report')} // Open in new tab
+          onClick={() => window.open('/laundry/report')} // Open in new tab
         >
           Report
         </button>
