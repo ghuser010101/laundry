@@ -1,0 +1,19 @@
+/* Admin.css */
+.admin-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .completed-queue-box {
+    margin-top: 20px;
+    padding: 20px;  /* Increased padding for a bigger box */
+    border: 1px solid #007bff;
+    background-color: #ffffff;
+    border-radius: 5px;
+    max-width: 400px;  /* Set a maximum width for the box */
+  }
+  
+  .list-group-item {
+    font-size: 1.2em;  /* Slightly larger font for visibility */
+  }
+  
