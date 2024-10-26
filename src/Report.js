@@ -15,7 +15,7 @@ const Report = () => {
         <iframe 
           src="https://docs.google.com/forms/d/e/1FAIpQLSdzxw-jJ0rYSTQIqKhx74H2i4RDR6YKkEAeXeUE-Xj8kq374A/viewform?embedded=true" 
           width="640" 
-          height="1129" 
+          height="1500" 
           frameBorder="0" 
           marginHeight="0" 
           marginWidth="0"
