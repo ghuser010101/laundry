@@ -204,7 +204,7 @@ function AdminComponent() {
 
         <div style={styles.darkModeToggle}>
           <button onClick={toggleDarkMode} className="btn btn-light">
-            {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            {/* {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'} */}
           </button>
         </div>
       </div>
