@@ -13,7 +13,7 @@ const Report = () => {
 
       <div className="container mt-4 d-flex justify-content-center">
         <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdzxw-jJ0rYSTQIqKhx74H2i4RDR6YKkEAeXeUE-Xj8kq374A/viewform?embedded=true" 
+          src="https://docs.google.com/forms/d/e/1FAIpQLScNJfY12KkSG7PwTSEXCpKoifVFb5-wPvTb0ZqVm67wT6ufig/viewform?embedded=true" 
           width="640" 
           height="1500" 
           frameBorder="0" 
