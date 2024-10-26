@@ -1,16 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Admin from './Admin';
 import MainComponent from './MainComponent';
-import Report from './Report';  // Import the Report component
+import Report from './Report';
 
 function App() {
   return (
-    <Router basename="/laundry">  {/* Set the basename for GitHub Pages */}
+    <Router>  {/* No need for basename with HashRouter */}
       <Routes>
         <Route path="/" element={<MainComponent />} />
-        <Route path="/admin" element={<Admin />} />  {/* Corrected path */}
-        <Route path="/report" element={<Report />} />  {/* Corrected path */}
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/report" element={<Report />} />
       </Routes>
     </Router>
   );
