@@ -270,13 +270,19 @@ const styles = {
     maxWidth: '600px', // Make it full width
   },
   loginContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '100vh', // Take full viewport height
     padding: '50px',
     maxWidth: '400px',
     margin: '0 auto',
     textAlign: 'center',
     backgroundColor: '#f8f9fa',
     borderRadius: '10px',
-  },
+  }
+  ,
   darkModeToggle: {
     marginTop: '20px',
     display: 'flex',

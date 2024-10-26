@@ -169,15 +169,26 @@ function MainComponent() {
 
   return (
     <div className="App d-flex flex-column vh-100">
-      <header className="d-flex justify-content-between align-items-center p-3" style={{ backgroundColor: '#d3d3d3' }}>
-        <h1 className="mb-0">Washing Machine</h1>
-        <button 
-          className="btn btn-secondary" 
-          onClick={() => window.open('/laundry/#/report')} // Open in new tab
-        >
-          Report
-        </button>
-      </header>
+    <header className="d-flex justify-content-between align-items-center p-3" style={{ backgroundColor: '#d3d3d3' }}>
+  <h1 className="mb-0 me-auto">Laundry Caller</h1> {/* Added me-auto for left alignment */}
+  <div className="d-flex">
+    <button 
+      className="btn btn-secondary me-2" 
+      onClick={() => window.open('/laundry/#/report')} // Open Report in new tab
+    >
+      Report
+    </button>
+    <button 
+      className="btn btn-secondary" 
+      onClick={() => window.open('/laundry/#/admin')} // Open Admin in new tab
+    >
+      Admin
+    </button>
+  </div>
+</header>
+
+
+
 
       {/* Timer Box - Hide if timerValue is 1 */}
       {timerValue !== 1 && (
