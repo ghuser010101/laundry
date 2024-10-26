@@ -89,7 +89,7 @@ function AdminComponent() {
     const totalInQueue = Object.keys(phoneNumbers).length;
 
     setPerformanceData([
-      { label: 'Completed', value: totalCompleted },
+      { label: 'Washing', value: totalCompleted },
       { label: 'In Queue', value: totalInQueue },
     ]);
   };
@@ -192,7 +192,7 @@ function AdminComponent() {
         </div>
 
         <div style={styles.completedQueueBox}>
-          <h5>Completed Queue:</h5>
+          <h5>Currently Washing:</h5>
           <ul className="list-group text-center">
             {Object.entries(completedQueue).map(([id, value], index) => (
               <li className="list-group-item" key={id}>
