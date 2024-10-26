@@ -6,11 +6,11 @@ import Report from './Report';  // Import the Report component
 
 function App() {
   return (
-    <Router basename="/">  {/* Set the basename to root */}
+    <Router basename="/laundry">  {/* Set the basename for GitHub Pages */}
       <Routes>
         <Route path="/" element={<MainComponent />} />
-        <Route path="/admin" element={<Admin />} />  {/* Route for Admin */}
-        <Route path="/report" element={<Report />} />  {/* Route for Report */}
+        <Route path="/admin" element={<Admin />} />  {/* Corrected path */}
+        <Route path="/report" element={<Report />} />  {/* Corrected path */}
       </Routes>
     </Router>
   );
