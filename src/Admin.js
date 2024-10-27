@@ -117,6 +117,16 @@ function AdminComponent() {
       });
   };
 
+  // New function to handle deleting a completed queue item
+  const handleDeleteCompletedQueue = (id) => {
+    const completedQueueRef = ref(db, `completedQueue/${id}`);
+
+    remove(completedQueueRef)
+      .catch((error) => {
+        console.error("Error deleting completed queue item:", error);
+      });
+  };
+
   const chartData = {
     labels: performanceData.map(data => data.label),
     datasets: [
@@ -195,8 +205,11 @@ function AdminComponent() {
           <h5>Currently Washing:</h5>
           <ul className="list-group text-center">
             {Object.entries(completedQueue).map(([id, value], index) => (
-              <li className="list-group-item" key={id}>
+              <li className="list-group-item d-flex justify-content-between align-items-center" key={id}>
                 {index + 1}. {value}
+                <button className="btn btn-danger btn-sm" onClick={() => handleDeleteCompletedQueue(id)}>
+                  Delete
+                </button>
               </li>
             ))}
           </ul>
@@ -235,11 +248,11 @@ const styles = {
   content: {
     marginTop: '70px', // Space for header
     width: '100%',
-    maxWidth: '1200px', // Center the content
-    padding: '20px', // Padding for the content
+    maxWidth: '1200px',
+    padding: '20px',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center', // Center content horizontally
+    alignItems: 'center',
   },
   completedQueueBox: {
     marginTop: '20px',
@@ -249,25 +262,20 @@ const styles = {
     borderRadius: '5px',
     width: '100%',
     maxWidth: '600px',
-    textAlign: 'center', // Center text inside the box
   },
   phoneNumbersBox: {
     marginTop: '20px',
     padding: '20px',
     border: '1px solid #28a745',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#f8f9fa',
     borderRadius: '5px',
     width: '100%',
-    maxWidth: '600px', // Make it full width
+    maxWidth: '600px',
   },
   chartContainer: {
     marginTop: '20px',
-    padding: '20px',
-    border: '1px solid #ffc107',
-    backgroundColor: '#fff8e1',
-    borderRadius: '5px',
     width: '100%',
-    maxWidth: '600px', // Make it full width
+    maxWidth: '600px',
   },
   loginContainer: {
     display: 'flex',
@@ -276,18 +284,11 @@ const styles = {
     alignItems: 'center',
     minHeight: '100vh', // Take full viewport height
     padding: '50px',
-    maxWidth: '400px',
+    maxWidth: '900px',
     margin: '0 auto',
     textAlign: 'center',
     backgroundColor: '#f8f9fa',
     borderRadius: '10px',
-  }
-  ,
-  darkModeToggle: {
-    marginTop: '20px',
-    display: 'flex',
-    justifyContent: 'center', // Center the toggle button
-    width: '100%',
   },
 };
 
