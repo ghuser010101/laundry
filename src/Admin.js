@@ -117,13 +117,23 @@ function AdminComponent() {
       });
   };
 
-  // New function to handle deleting a completed queue item
   const handleDeleteCompletedQueue = (id) => {
     const completedQueueRef = ref(db, `completedQueue/${id}`);
 
     remove(completedQueueRef)
       .catch((error) => {
         console.error("Error deleting completed queue item:", error);
+      });
+  };
+
+  const handleReset = () => {
+    const timerRef = ref(db, 'washingTimer');
+    set(timerRef, 1)
+      .then(() => {
+        console.log("Washing timer reset to 1");
+      })
+      .catch((error) => {
+        console.error("Error resetting washing timer:", error);
       });
   };
 
@@ -177,6 +187,9 @@ function AdminComponent() {
 
       <div style={styles.content}>
         <p>This is the admin panel where you can manage washing queue and settings.</p>
+
+        {/* Reset Button */}
+        <button className="btn btn-warning mb-3" onClick={handleReset}>Reset Timer</button>
 
         <div style={styles.phoneNumbersBox}>
           <h5>Current Phone Numbers:</h5>
@@ -258,7 +271,6 @@ const styles = {
     marginTop: '20px',
     padding: '20px',
     border: '1px solid #007bff',
-    backgroundColor: '#f0f8ff',
     borderRadius: '5px',
     width: '100%',
     maxWidth: '600px',
@@ -267,28 +279,28 @@ const styles = {
     marginTop: '20px',
     padding: '20px',
     border: '1px solid #28a745',
-    backgroundColor: '#f8f9fa',
     borderRadius: '5px',
     width: '100%',
     maxWidth: '600px',
   },
   chartContainer: {
     marginTop: '20px',
+    padding: '20px',
+    border: '1px solid #ffc107',
+    borderRadius: '5px',
     width: '100%',
     maxWidth: '600px',
+  },
+  darkModeToggle: {
+    marginTop: '20px',
   },
   loginContainer: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
     alignItems: 'center',
-    minHeight: '100vh', // Take full viewport height
-    padding: '50px',
-    maxWidth: '900px',
-    margin: '0 auto',
-    textAlign: 'center',
+    justifyContent: 'center',
+    height: '100vh',
     backgroundColor: '#f8f9fa',
-    borderRadius: '10px',
   },
 };
 
